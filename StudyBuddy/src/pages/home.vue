@@ -4,10 +4,10 @@
       <v-app-bar-title class="font-weight-medium">Dashboard</v-app-bar-title>
     </v-app-bar>
   </nav>
-  <v-row class="mt-5 h-100" justify="space-evenly">
+  <v-row class="mt-5 h-80 mb-2" justify="space-evenly">
     <!-- keeping both columns in same line -->
     <v-col
-      class="d-flex flex-column border-md rounded-xl elevated-24 h-100 pa-2 mb-0"
+      class="border-md rounded-xl elevated-24 h-100 pa-2 mb-0"
       cols="7"
       justify="start"
     >
@@ -134,74 +134,153 @@
 
 
     </v-col>
-    <v-col class="d-flex border-md rounded-lg responsive mb-0 pa-0" cols="4">
-      <v-row class="d-flex mt-2" justify="space-evenly">
+    <v-col class="border-md rounded-lg responsive mb-0 pa-0 justify-center" cols="4">
+      <v-row class="d-flex ma-0 mt-2  h-25 mb-5" justify="space-evenly">
+        <h2 class="d-flex w-100  ml-4 mb-5 ">Completions</h2>
         <v-col
-          class="d-flex flex-column justify-space-evenly align-center text-wrap
-         border-sm rounded-xl elevation-2  custom-height"
-          cols="5"
+          class="d-flex flex-column justify-space-between align-center pa-2"
+          cols="12"
+          md="5"
+          sm="6"
         >
-          <!-- 1) Tasks at the very top -->
-          <div class="text-h5 font-weight-bold">
-            Tasks
-          </div>
-
-          <!-- 2) Circle at the very bottom -->
           <v-card
-            class="d-flex align-center justify-center elevation-10 rounded-circle mb-2"
-            style="width: 7vw; height: 16vh;"
+            class="d-flex flex-column justify-space-between align-center pa-4 w-100 elevation-2 rounded-lg"
+            height="200"
           >
-            <v-progress-circular
-              color="yellow-darken-3"
-              :model-value="value"
-              rotate="360"
-              size="80"
-              width="15"
-            >
-              <template #default>{{ value }}%</template>
-            </v-progress-circular>
+            <div class="text-h6 font-weight-bold text-center">Tasks</div>
+
+            <!-- Circle Container -->
+            <div class="position-relative" style="width: 70%; padding-top: 70%">
+              <v-card
+                class="d-flex align-center justify-center elevation-10 rounded-circle"
+                style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        "
+              >
+                <v-progress-circular
+                  color="warning"
+                  :model-value="value"
+                  rotate="360"
+                  :size="80"
+                  style="transform: scale(0.8)"
+                  :width="15"
+                >
+                  <template #default>
+                    <span class="text-body-1 font-weight-medium">{{ value }}%</span>
+                  </template>
+                </v-progress-circular>
+              </v-card>
+            </div>
           </v-card>
         </v-col>
-
-        <!-- <v-col
-          align-self="start"
-          class="d-flex pa-0 px-0 justify-center border-lg  custom-height"
-          cols="6"
-        >
-          <v-progress-circular
-            color="teal"
-            :model-value="value"
-            :rotate="360"
-            :size="100"
-            :width="15"
-          >
-            <template #default> {{ value }} % </template>
-          </v-progress-circular>
-        </v-col> -->
         <v-col
-          class="d-flex flex-column justify-space-evenly align-center text-wrap
-         border-sm rounded-xl elevation-2 pa-0 custom-height"
-          cols="5"
+          class="d-flex flex-column justify-space-between align-center pa-2"
+          cols="12"
+          md="5"
+          sm="6"
         >
-          <!-- 1) Tasks at the very top -->
-          <div class="text-h6 font-weight-bold">
-            Assignments
-          </div>
-
-          <!-- 2) Circle at the very bottom -->
           <v-card
-            class="d-flex align-center justify-center elevation-10 rounded-circle"
-            style="width: 7vw; height: 16vh;"
+            class="d-flex flex-column justify-space-between align-center pa-4 w-100 elevation-2 rounded-lg"
+            height="200"
           >
-            <v-progress-circular
-              color="teal"
-              :model-value="value2"
-              rotate="360"
-              size="80"
-              width="15"
-            >
-              <template #default>{{ value2 }}%</template>
-            </v-progress-circular>
+            <div class="text-h6 font-weight-bold text-center">Assignments</div>
+
+            <!-- Circle Container -->
+            <div class="position-relative" style="width: 70%; padding-top: 70%">
+              <v-card
+                class="d-flex align-center justify-center elevation-10 rounded-circle"
+                style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        "
+              >
+                <v-progress-circular
+                  color="teal"
+                  :model-value="value2"
+                  rotate="360"
+                  :size="90"
+                  style="transform: scale(0.8)"
+                  :width="15"
+                >
+                  <template #default>
+                    <span class="text-body-1 font-weight-medium">{{ value2 }}%</span>
+                  </template>
+                </v-progress-circular>
+              </v-card>
+            </div>
+          </v-card>
+        </v-col>
+      </v-row>
+      <!-- To Do tasks -->
+      <v-row class=" mt-0 pa-4">
+        <v-col class=" ma-2">
+          <h2 class="d-flex w-100  ml-1 mb-5 ma-auto ">TO DO</h2>
+          <v-card class="elevated-24">
+            <v-timeline align="start" side="end">
+              <v-timeline-item
+                dot-color="pink"
+                size="small"
+              >
+                <div class="d-flex">
+                  <strong class="me-4">5pm</strong>
+                  <div>
+                    <strong>New Icon</strong>
+                    <div class="text-caption">
+                      Mobile App
+                    </div>
+                  </div>
+                </div>
+              </v-timeline-item>
+
+              <v-timeline-item
+                dot-color="teal-lighten-3"
+                size="small"
+              >
+                <div class="d-flex">
+                  <strong class="me-4">3-4pm</strong>
+                  <div>
+                    <strong>Design Stand Up</strong>
+                    <div class="text-caption mb-2">
+                      Hangouts
+                    </div>
+                  </div>
+                </div>
+              </v-timeline-item>
+
+              <v-timeline-item
+                dot-color="pink"
+                size="small"
+              >
+                <div class="d-flex">
+                  <strong class="me-4">12pm</strong>
+                  <div>
+                    <strong>Lunch break</strong>
+                  </div>
+                </div>
+              </v-timeline-item>
+
+              <v-timeline-item
+                dot-color="teal-lighten-3"
+                size="small"
+              >
+                <div class="d-flex">
+                  <strong class="me-4">9-11am</strong>
+                  <div>
+                    <strong>Finish Home Screen</strong>
+                    <div class="text-caption">
+                      Web App
+                    </div>
+                  </div>
+                </div>
+              </v-timeline-item>
+            </v-timeline>
           </v-card>
         </v-col>
       </v-row>

@@ -10,6 +10,10 @@ const routes = [
     component: () => import('@/layouts/SideMenu.vue'),
     children: [
       {
+        path: '/',
+        component: () => import('@/pages/home.vue'),
+      },
+      {
         path: 'home',
         component: () => import('@/pages/home.vue'),
       },

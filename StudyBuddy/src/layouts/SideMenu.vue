@@ -18,8 +18,8 @@
         <v-list density="compact" nav>
           <v-list-item
             link
-            prepend-icon="mdi-folder"
-            title="My Files"
+            prepend-icon="mdi-view-dashboard"
+            title="Dashboard"
             to="/home"
             value="myfiles"
           />
@@ -36,16 +36,20 @@
         </v-list>
       </v-navigation-drawer>
 
-      <v-main class="overflow-auto hideScrollbar">
+      <v-main class="smooth">
         <!-- <H1>Helloe</H1> -->
-        <router-view />
-        <!-- <Footer /> -->
-      </v-main>
+        <body class="smooth">
+          <router-view />
+        </body>
+        <div class="">
+          <Footer />
+        </div></v-main>
     </v-layout>
   </v-card>
 </template>
 <style>
-.hideScrollbar{
-  scrollbar-width: none;
+
+.smooth{
+  overflow: hidden;
 }
 </style>

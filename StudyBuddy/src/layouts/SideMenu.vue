@@ -38,7 +38,7 @@
 
       <v-main class="smooth">
         <!-- <H1>Helloe</H1> -->
-        <body class="smooth">
+        <body class="smooth px-4">
           <router-view />
         </body>
         <div class="">
@@ -47,7 +47,7 @@
     </v-layout>
   </v-card>
 </template>
-<style>
+<style scoped>
 
 .smooth{
   overflow: hidden;

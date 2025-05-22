@@ -7,9 +7,10 @@
   <v-row class="mt-5 h-80 mb-2" justify="space-evenly">
     <!-- keeping both columns in same line -->
     <v-col
-      class="border-md rounded-xl elevated-24 h-100 pa-2 mb-0"
-      cols="7"
+      class="border-md rounded-xl elevation-24 h-100 pa-2 mb-3"
+      cols="12"
       justify="start"
+      md="7"
     >
       <v-row class="d-flex pa-0 ma-0 mb-2 mt-1" justify="center">
         <!-- <v-row justify="center"> -->
@@ -75,7 +76,7 @@
           </v-list>
         </v-card>
       </v-row>
-      <v-row class="d-flex mx-1 my-2 elevated-24" justify="center">
+      <v-row class="d-flex mx-1 my-2 elevation-24" justify="center">
         <v-container class="pa-0" fluid>
           <v-card>
             <v-card-title class="text-overline">
@@ -134,8 +135,8 @@
 
 
     </v-col>
-    <v-col class="border-md rounded-lg responsive mb-0 pa-0 justify-center" cols="4">
-      <v-row class="d-flex ma-0 mt-2  h-25 mb-5" justify="space-evenly">
+    <v-col class="border-md rounded-lg responsive mb-0 pa-0 justify-center mb-3 elevation-24 " cols="12" md="4">
+      <v-row class="d-flex ma-0 mt-2  h-auto mb-5" justify="space-evenly">
         <h2 class="d-flex w-100  ml-4 mb-5 ">Completions</h2>
         <v-col
           class="d-flex flex-column justify-space-between align-center pa-2"
@@ -144,15 +145,17 @@
           sm="6"
         >
           <v-card
-            class="d-flex flex-column justify-space-between align-center pa-4 w-100 elevation-2 rounded-lg"
-            height="200"
+            class="d-flex flex-column justify-space-evenly align-center pa-4 w-100 elevation-2 rounded-lg"
+            height="100%"
           >
-            <div class="text-h6 font-weight-bold text-center">Tasks</div>
+            <div class="text-h6 font-weight-bold text-center ma-0">Tasks</div>
 
             <!-- Circle Container -->
-            <div class="position-relative" style="width: 70%; padding-top: 70%">
+            <div
+              class="position-relative dial"
+            >
               <v-card
-                class="d-flex align-center justify-center elevation-10 rounded-circle"
+                class="d-flex align-center justify-center elevation-10 rounded-circle pa-0 ma-0"
                 style="
           position: absolute;
           top: 0;
@@ -165,8 +168,8 @@
                   color="warning"
                   :model-value="value"
                   rotate="360"
-                  :size="80"
-                  style="transform: scale(0.8)"
+                  :size="100"
+                  style="transform: scale(1.0)"
                   :width="15"
                 >
                   <template #default>
@@ -184,13 +187,13 @@
           sm="6"
         >
           <v-card
-            class="d-flex flex-column justify-space-between align-center pa-4 w-100 elevation-2 rounded-lg"
-            height="200"
+            class="d-flex flex-column justify-space-evenly align-center pa-4 w-100 elevation-2 rounded-lg"
+            height="100%"
           >
             <div class="text-h6 font-weight-bold text-center">Assignments</div>
 
             <!-- Circle Container -->
-            <div class="position-relative" style="width: 70%; padding-top: 70%">
+            <div class="position-relative dial">
               <v-card
                 class="d-flex align-center justify-center elevation-10 rounded-circle"
                 style="
@@ -222,7 +225,7 @@
       <v-row class=" mt-0 pa-4">
         <v-col class=" ma-2">
           <h2 class="d-flex w-100  ml-1 mb-5 ma-auto ">TO DO</h2>
-          <v-card class="elevated-24">
+          <v-card class="elevation-24">
             <v-timeline align="start" side="end">
               <v-timeline-item
                 dot-color="pink"
@@ -343,5 +346,13 @@
 .responsive{
   overflow: none;
   flex-wrap: wrap;
+}
+.dial{
+  width: 85%; padding-top: 85%;
+}
+@media (max-width: 944px) {
+  .dial{
+    width: 40%; padding-top: 40%;
+  }
 }
 </style>

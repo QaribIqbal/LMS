@@ -208,8 +208,8 @@
                   color="teal"
                   :model-value="value2"
                   rotate="360"
-                  :size="90"
-                  style="transform: scale(0.8)"
+                  :size="100"
+                  style="transform: scale(1.0)"
                   :width="15"
                 >
                   <template #default>
